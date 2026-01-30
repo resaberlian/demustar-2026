@@ -1,8 +1,7 @@
-export const dynamic = "force-dynamic";
-"use client";
+"use client"
 
 import { supabase } from "../../src/lib/supabase";
-import { ClipboardMinus } from 'lucide-react';
+import { ClipboardMinus } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface Laporan {
