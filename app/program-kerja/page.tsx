@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { supabase } from "../../src/lib/supabase";
 import { Users, Target, Goal, Shield, Award, ChevronDown, ChevronUp } from 'lucide-react';
 import Image from "next/image";
