@@ -14,7 +14,7 @@ export default async function ProgramKerjaPage() {
   return (
     <>
       {/* HEADER PROGRAM KERJA */}
-      <section className="relative bg-gradient-to-br from-black via-gray-900 to-black py-20 border-b border-yellow-500/30 mt-6">
+      <section className="relative bg-gradient-to-br from-black via-gray-900 to-black py-5 md:py-15 border-b border-yellow-500/30 ">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#050b18] to-black" />
         <div
           className="absolute inset-0 opacity-20"
@@ -27,16 +27,16 @@ export default async function ProgramKerjaPage() {
          <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <div className="inline-block mb-6">
-              <div className="w-24 h-24 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl shadow-yellow-500/50">
+              <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl shadow-yellow-500/50">
                 <Goal size={48} className="text-black" />
               </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold">
+            <h1 className="text-3xl md:text-5xl font-bold">
             Program Kerja{" "}
             <span className="text-yellow-500">Demustar</span>
           </h1>
 
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg pt-5">
+          <p className="text-gray-300 max-w-2xl mx-auto text-md pt-5">
             Kumpulan program kerja Dewan Musyawarah Taruna sebagai
             bentuk implementasi fungsi aspiratif, kolaboratif, dan
             solutif.

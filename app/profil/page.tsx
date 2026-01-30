@@ -221,7 +221,7 @@ export default function ProfilPage() {
       <div className="flex items-center gap-4">
         <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-yellow-500/30 group-hover:border-yellow-500/60 flex-shrink-0 transition-all duration-300 shadow-md group-hover:shadow-yellow-500/30">
           <img 
-            src={imagePath || `/assets/${name.toLowerCase().replace(/\s+/g, '_')}.jpeg`}
+            src={imagePath || `/struktur-organisasi/${name.toLowerCase().replace(/\s+/g, '_')}.jpeg`}
             alt={name}
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -247,9 +247,9 @@ export default function ProfilPage() {
   );
 
   return (
-    <div className="min-h-screen bg-black text-white mt-5">
+    <div className="min-h-screen bg-black text-white ">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-black via-gray-900 to-black py-20 border-b border-yellow-500/30">
+      <section className="relative bg-gradient-to-br from-black via-gray-900 to-black py-15 border-b border-yellow-500/30">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, #D4AF37 1px, transparent 0)`,
           backgroundSize: '40px 40px'
@@ -258,14 +258,14 @@ export default function ProfilPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <div className="inline-block mb-6">
-              <div className="w-24 h-24 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl shadow-yellow-500/50">
+              <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl shadow-yellow-500/50">
                 <Shield size={48} className="text-black" />
               </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">
               Profil <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Demustar</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-md text-gray-300 max-w-3xl mx-auto">
               Dewan Musyawarah Taruna Politeknik Pengayoman Indonesia
             </p>
           </div>
@@ -278,14 +278,14 @@ export default function ProfilPage() {
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
               <BookOpen className="text-yellow-500" size={32} />
-              <h2 className="text-4xl font-bold text-yellow-500">Sejarah Singkat</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-yellow-500">Sejarah Singkat</h2>
             </div>
             
             <div className="bg-gradient-to-br from-gray-900 to-black border border-yellow-500/30 rounded-2xl p-8 md:p-12">
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
+              <p className="text-md md:text-lg text-gray-300 leading-relaxed mb-6">
                 Demustar Poltekpin adalah kelanjutan dari <strong className="text-yellow-500">Badan Perwakilan Taruna Poltekip</strong> dan <strong className="text-yellow-500">Demustar Poltekim</strong> yang berdiri pada <strong className="text-white">5 Juni 2025</strong>. Sebagai Dewan Perwakilan Taruna, Demustar memiliki fungsi legislatif di lingkungan Taruna Politeknik Pengayoman Indonesia.
               </p>
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
+              <p className="text-md md:text-lg text-gray-300 leading-relaxed mb-6">
                 Organisasi ini bersifat <strong className="text-yellow-500">non-politik, kekeluargaan, transparan</strong>, serta menjunjung musyawarah mufakat. Demustar berperan sebagai fasilitator bagi taruna melalui penyaluran aspirasi, pengawasan, dan evaluasi kegiatan organisasi, serta pelaksanaan fungsi legislasi dan kaderisasi.
               </p>
               
@@ -332,10 +332,10 @@ export default function ProfilPage() {
                 Filosofi Logo
               </span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 mb-4">
               7 Makna Logo Demustar
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-md max-w-2xl mx-auto">
               Setiap elemen dalam logo kami memiliki makna mendalam yang merepresentasikan nilai-nilai Poltekpin
             </p>
           </div>
@@ -489,13 +489,13 @@ export default function ProfilPage() {
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
               <Target className="text-yellow-500" size={32} />
-              <h2 className="text-4xl font-bold text-yellow-500">Visi & Misi</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-yellow-500">Visi & Misi</h2>
             </div>
             
             {/* Visi */}
             <div className="bg-gradient-to-br from-gray-900 to-black border border-yellow-500/30 rounded-2xl p-8 md:p-12 mb-8">
               <h3 className="text-3xl font-bold text-yellow-500 mb-6">Visi</h3>
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-md text-gray-300 leading-relaxed">
                 Mewujudkan Dewan Musyawarah Taruna sebagai lembaga perwakilan taruna yang <strong className="text-yellow-500">berintegritas, aspiratif, adil, dan profesional</strong> dalam menjalankan fungsi legislasi, pengawasan, dan kaderisasi guna membentuk taruna Politeknik Pengayoman Indonesia yang berkarakter pengayom, berlandaskan <strong className="text-white">Pancasila</strong> dan <strong className="text-white">Undang-Undang Dasar 1945</strong>.
               </p>
             </div>
@@ -544,11 +544,11 @@ export default function ProfilPage() {
               </div>
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Users className="text-yellow-500" size={40} />
-                <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
+                <h2 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
                   Struktur Organisasi
                 </h2>
               </div>
-              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              <p className="text-gray-400 text-md max-w-2xl mx-auto">
                 Tim solid yang berkomitmen untuk kemajuan Poltekpin
               </p>
             </div>
@@ -583,7 +583,7 @@ export default function ProfilPage() {
                 <div className="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center border border-yellow-500/30">
                   <Users className="text-yellow-500" size={24} />
                 </div>
-                <h3 className="text-3xl font-bold text-yellow-500">Sekretariat</h3>
+                <h3 className="text-2xl font-bold text-yellow-500">Sekretariat</h3>
               </div>
               
               {/* Pimpinan Sekretariat */}

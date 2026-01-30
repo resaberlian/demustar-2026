@@ -8,11 +8,11 @@ export default async function Home() {
     .select("*")
     .order("created_at", { ascending: false });
   return (
-    <main className="min-h-screen bg-black text-white mt-5">
+    <main className="min-h-screen bg-black text-white ">
       {/* Navigation */}
       
       {/* Hero Section */}
-      <section id="beranda" className="pt-24 pb-12 relative overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <section id="beranda" className="pt-12 pb-12 relative overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Radial Glow Background (Animated) */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-yellow-600/20 rounded-full blur-[120px] animate-pulse"></div>
@@ -26,12 +26,12 @@ export default async function Home() {
           {/* Left Content */}
           <div className="space-y-6">
             <div className="inline-block">
-              <span className="px-4 py-2 bg-yellow-600/20 border border-yellow-600 text-yellow-500 rounded-full text-sm font-semibold">
+              <span className="px-4 py-2 bg-yellow-600/20 border border-yellow-600 text-yellow-500 rounded-full text-xs font-semibold md:text-md">
                 Parlemen Absolut
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
               Selamat Datang di{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-700">
                 Demustar
@@ -43,17 +43,17 @@ export default async function Home() {
             </h2>
 
             <div className="space-y-4 text-gray-300">
-              <p className="text-lg leading-relaxed">
+              <p className="text-xs leading-relaxed md:text-lg">
                 <strong className="text-yellow-500">Dewan Musyawarah Taruna Poltekpin</strong> adalah wadah aspirasi dan representasi taruna dalam menyuarakan kepentingan bersama.
               </p>
-              <p className="text-lg leading-relaxed">
+              <p className="text-xs leading-relaxed md:text-lg">
                 Kami hadir sebagai parlemen yang <span className="text-yellow-500 font-semibold">Aspiratif, Kolaboratif, dan Solutif</span> untuk menciptakan lingkungan kampus yang lebih baik.
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="pt-6 space-y-4">
-              <h3 className="text-xl font-semibold text-yellow-500 mb-4">
+              <h3 className="text-lg font-semibold text-yellow-500 mb-4">
                 Sampaikan Aspirasi Anda Melalui:
               </h3>
               
@@ -88,17 +88,7 @@ export default async function Home() {
                     <span className="text-yellow-500">@demustar_poltekpin</span>
                   </a>
                   
-                  <a 
-                    href="https://youtube.com/@DemustarPoltekpin" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 bg-yellow-600/10 hover:bg-yellow-600/20 border border-yellow-600/50 px-6 py-3 rounded-lg transition-all hover:border-yellow-600"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                    <span className="text-yellow-500">Demustar Poltekpin</span>
-                  </a>
+                  
                 </div>
               </div>
             </div>
@@ -122,7 +112,7 @@ export default async function Home() {
 
               {/* TEXT OVER IMAGE */}
               <div className="absolute bottom-10 left-10 right-10 z-10">
-                <h3 className="text-3xl font-bold text-yellow-500 mb-2">
+                <h3 className="text-2xl md:text-3xl font-bold text-yellow-500 mb-2">
                   DEMUSTAR POLTEKPIN
                 </h3>
                 <p className="text-gray-200 leading-relaxed">
@@ -249,15 +239,15 @@ export default async function Home() {
 
           {/* Right - Content */}
           <div className="space-y-6">
-            <span className="inline-block px-4 py-2 bg-yellow-600/20 border border-yellow-600 text-yellow-500 rounded-full text-sm font-semibold">
+            <span className="inline-block px-4 py-2 bg-yellow-600/20 border border-yellow-600 text-yellow-500 rounded-full text-xs md:text-md font-semibold">
               Profil Singkat
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight">
               Tentang <span className="text-yellow-500">Demustar Poltekpin</span>
             </h2>
 
-            <p className="text-gray-300 leading-relaxed text-lg">
+            <p className="text-gray-300 leading-relaxed text-md md:text-lg">
               <strong className="text-yellow-500">Demustar Poltekpin</strong> 
               {' '}merupakan kelanjutan dari 
               <strong> Badan Perwakilan Taruna Poltekip</strong> dan 
@@ -265,7 +255,7 @@ export default async function Home() {
               <strong className="text-yellow-500"> 5 Juni 2025</strong>.
             </p>
 
-            <p className="text-gray-300 leading-relaxed text-lg">
+            <p className="text-gray-300 leading-relaxed text-md md:text-lg">
               Sebagai <strong>Dewan Perwakilan Taruna</strong>, Demustar memiliki 
               <span className="text-yellow-500 font-semibold"> fungsi legislatif</span> 
               {' '}di lingkungan Taruna Politeknik Pengayoman Indonesia, berperan dalam
@@ -293,16 +283,16 @@ export default async function Home() {
 <section className=" bg-black text-white px-6  pb-20 pt-12">
   {/* Section Title */}
 <div className="text-center mb-14 space-y-4">
-<span className="inline-block px-4 py-2 bg-yellow-600/20 border border-yellow-600 text-yellow-500 rounded-full text-sm font-semibold">
+<span className="inline-block px-4 py-2 bg-yellow-600/20 border border-yellow-600 text-yellow-500 rounded-full text-xs md:text-md font-semibold">
 Program Unggulan
             </span>
   
 
-  <h2 className="text-4xl md:text-5xl font-bold">
+  <h2 className="text-3xl md:text-5xl font-bold">
     Program Kerja <span className="text-yellow-500">DEMUSTAR</span>
   </h2>
 
-  <p className="text-gray-400 max-w-2xl mx-auto">
+  <p className="text-gray-400 max-w-2xl mx-auto  text-md md:text-lg">
     Program kerja Demustar sebagai wujud pelaksanaan fungsi legislatif dan
     pengawasan aspirasi Taruna Politeknik Pengayoman Indonesia.
   </p>

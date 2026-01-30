@@ -88,14 +88,14 @@ export default function LaporanPage() {
   return (
     <>
       {/* HEADER PROGRAM KERJA */}
-      <section className="relative bg-gradient-to-br from-black via-gray-900 to-black py-20 border-b border-yellow-500/30 mt-6">
+      <section className="relative bg-gradient-to-br from-black via-gray-900 to-black py-5 md:py-15 border-b border-yellow-500/30 ">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#050b18] to-black" />
         <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage:
               "radial-gradient(#facc15 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
+            backgroundSize: "20px 20px",
           }}
         />
         <div className="container mx-auto px-4 relative z-10">
@@ -105,18 +105,18 @@ export default function LaporanPage() {
                 <ClipboardMinus size={48} className="text-black" />
               </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold">
+            <h1 className="text-3xl md:text-5xl font-bold">
               Laporan <span className="text-yellow-500">Demustar</span>
             </h1>
 
-            <p className="text-gray-300 max-w-2xl mx-auto text-lg pt-5">
+            <p className="text-gray-300 max-w-2xl mx-auto text-md pt-5">
               Kumpulan laporan kegiatan dan dokumentasi pelaksanaan program kerja Dewan Musyawarah Taruna sebagai bentuk transparansi dan pertanggungjawaban organisasi.
             </p>
           </div>
         </div>
       </section>
 
-      <div className="min-h-screen bg-black text-white pt-32 px-6">
+      <div className="min-h-screen bg-black text-white py-10 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10">
           {laporan.length === 0 ? (
             <div className="col-span-2 text-center py-20">

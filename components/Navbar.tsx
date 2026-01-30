@@ -170,7 +170,7 @@ export default function Navbar() {
           {/* Mobile Menu Footer */}
           <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-yellow-500/20">
             <p className="text-left text-gray-400 text-xs px-4">
-              © 2024 DEMUSTAR Poltekpin
+              © 2026 DEMUSTAR Poltekpin
             </p>
           </div>
         </div>
