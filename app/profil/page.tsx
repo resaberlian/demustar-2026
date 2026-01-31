@@ -249,7 +249,7 @@ export default function ProfilPage() {
   return (
     <div className="min-h-screen bg-black text-white ">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-black via-gray-900 to-black py-15 border-b border-yellow-500/30">
+      <section className="relative bg-gradient-to-br from-black via-gray-900 to-black py-5 md:py-15 border-b border-yellow-500/30">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, #D4AF37 1px, transparent 0)`,
           backgroundSize: '40px 40px'
