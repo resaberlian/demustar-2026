@@ -60,12 +60,7 @@ export default function ProgramKerjaAdminPage() {
             </div>
 
             <div className="flex gap-4">
-              <Link
-                href={`/admin/program-kerja/edit/${item.id}`}
-                className="text-blue-400"
-              >
-                Edit
-              </Link>
+             
               <button
                 onClick={() => handleDelete(item.id)}
                 className="text-red-400"
