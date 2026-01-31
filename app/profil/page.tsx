@@ -10,6 +10,104 @@ export default function ProfilPage() {
     setExpandedSection(expandedSection === section ? null : section);
   };
 
+  // ==========================================
+  // MAPPING URL FOTO - COPAS URL DI SINI
+  // ==========================================
+  const photoUrls: Record<string, string> = {
+    "Bangkit Filippo Pane": "",
+    "Muhammad Riza Halilullah": "anggota/pimpinan/riza.jpg",
+    "Shavy Salsa Agustin": "anggota/sekretariat/shavy.jpg",
+    "Rifda Alverina Rachman": "",
+    "Firda Royyani Yudhantari": "",
+    "Shofah Aprilia Riyanto": "",
+    "Nawang Wulan Yuli Astuti": "",
+    "Adinda Aulia Putri": "",
+    "Triani Martauli Tondang": "",
+    "Imam Zhafran Kaharuddin": "",
+    "Gigih Nanda Wirayuda": "",
+    "Mahardika Suwardana Putra": "",
+    "Mutiara Callista Prasmestya": "",
+    "Ardanendra": "",
+    "Januar Gangga Pratama": "",
+    "Sasabilla Detatama": "",
+    "Marisa Debora Letty DF": "",
+    "Muhammad Adib Iqbal": "anggota/komisi-1/adib.jpg",
+    "Razka Zakhran Syah": "",
+    "Muhammad Azmi Fathoni": "anggota/komisi-1/azmi.jpeg",
+    "Abdillah Putra Amar": "anggota/komisi-1/abdillah.jpeg",
+    "Ervan Fawwaaz Wijanarko": "anggota/komisi-1/ervan.jpg",
+    "Dwiki Aditya Nugraha": "anggota/komisi-1/Dwiki.jpg",
+    "Shabrina Rosyada": "anggota/komisi-1/shabrina.jpeg",
+    "Feliks Immanuel Fakto Kudadiri": "anggota/komisi-1/feliks.jpeg",
+    "Qurrota Aini Amira Listiani": "anggota/komisi-1/qurrota.jpeg",
+    "Sebastian Theodorick B. S.": "anggota/komisi-1/sebastian.webp",
+    "Jefanya Tesayanti": "anggota/komisi-1/jefanya.jpeg",
+    "Muhammad Akmal Fadhilah": "anggota/komisi-1/akmal.jpeg",
+    "Ijon Sadar Saragih": "anggota/komisi-1/ijon.jpeg",
+    "Restu Hayu Ramadhani": "anggota/komisi-1/restu.jpeg",
+    "Fadhel Sunyata": "",
+    "M Ghaza Al Ghifari": "",
+    "Anak Agung Istri Agung Cyntia Pramesti Dewi": "",
+    "I Gede Sibang Suantara": "",
+    "Akram Imam Syah": "",
+    "Achmad Rizkillah": "",
+    "Gusti Ngurah Ardika": "",
+    "Farrid Alfatjra": "",
+    "Muhammad Jagad Aditiya": "",
+    "Chairunnisa Ananda Dewi": "anggota/komisi-2/nisa.png",
+    "Alexandra Lidya Tesalonika S": "",
+    "Aurelius Felix Rimba Narayang": "",
+    "Ridho Aziz Nugroho": "",
+    "Syair Vani Anastasya": "",
+    "Ni Kadek Dwi Ananda Putri": "",
+    "Taruna Vradia Bagaskara": "",
+    "Wildan Hanif Kumoro Jati": "",
+    "Muhamad Husein Rifai": "",
+    "Nafa Fadilah": "",
+    "Lely Zaidir": "",
+    "Jimly Asshidiqie": "anggota/komisi-3/asshidique.jpg",
+    "Komang Anggi Vebiyanti": "anggota/komisi-3/komang.jpg",
+    "Sausan Adela": "anggota/komisi-3/sausan.jpg",
+    "Sisilya Novena Sinurat": "anggota/komisi-3/sisilya.png",
+    "Tasya Octaviani Setia Wijaya": "anggota/komisi-3/tasya.jpg",
+    "Andrenius Purba": "",
+    "Carlos Felix Betani Silalahi": "anggota/komisi-3/carlos.jpg",
+    "Jihan Farhanah Ramadhani": "anggota/komisi-3/jihan.png",
+    "Ahmad Lungguh Putra": "anggota/komisi-4/lungguh.jpg",
+    "Cindy Hertina Putri": "anggota/komisi-4/cindy.jpeg",
+    "Kasuma Bima Habibilah": "anggota/komisi-4/kasuma.jpg",
+    "Febe Okuli Hia": "anggota/komisi-4/febe.jpeg",
+    "Putri Amelia Casturie": "anggota/komisi-4/putri.jpg",
+    "Haris Yoga Saputra": "anggota/komisi-4/haris.jpg",
+    "Muhammad Afif Naliansyah": "anggota/komisi-4/afif.png",
+    "Fadhila Panisyah Bangun": "anggota/komisi-4/bangun.jpg",
+    "Nur Khalimatus Sya'diyah": "anggota/komisi-4/nur.jpg",
+    "Zacky Faiz Alfaridzi": "anggota/komisi-4/zacky.jpg",
+    "Arya Juna Fathan": "anggota/komisi-4/haris.jpg",
+    "Fania Ghita Az Zahra": "anggota/komisi-4/fania.jpg",
+    "I Wayan Agus Mas Saputra": "anggota/komisi-4/wayan.jpg",
+    "Dennis Andriano Imanuel Ginting": "",
+    "Dicky Extrada Surbakti": "anggota/komisi-5/surbakti.jpeg",
+    "Amelia Gresya Pasaribu": "anggota/komisi-5/amel.jpg",
+    "Widya Hafizhah": "anggota/komisi-5/widiya.jpg",
+    "Wesly Gabriel Matthew Hasibuan": "anggota/komisi-5/wesly.jpg",
+    "Adio Benno Zahtio Hamzah": "",
+    "Chefli": "",
+    "Fauzan Nur Khadavy": "anggota/komisi-5/fauzan.jpg",
+    "Mikha Rosaria Silaban": "anggota/komisi-5/mikha.jpg",
+    "Muhammad Yoni Erlando": "anggota/komisi-5/yoni.png",
+    "Ni Made Rista Putri": "anggota/komisi-5/nimade.jpg",
+    "Octario Tegar Maulana": "anggota/komisi-5/octario.jpg",
+    "Abrar Anugrah Alfarobi": "anggota/komisi-5/abrar.jpg",
+    "Amanda Khoirunnisa": "anggota/komisi-5/amanda.jpg",
+    "Dody Hendriq Pangestu": "anggota/komisi-5/dody.jpg",
+  };
+
+  // Fungsi untuk mendapatkan URL foto
+  const getPhotoUrl = (name: string): string => {
+    return photoUrls[name] || "/default-avatar.jpg"; // fallback ke foto default
+  };
+
   const logoMakna = [
     {
       title: "Bentuk Segi Delapan",
@@ -147,10 +245,9 @@ export default function ProfilPage() {
   ];
 
   // Reusable Components
-  const PersonCard = ({ name, role, imagePath, size = "md", badge = null }: {
+  const PersonCard = ({ name, role, size = "md", badge = null }: {
     name: string;
     role?: string;
-    imagePath?: string;
     size?: "xs" | "sm" | "md" | "lg" | "xl";
     badge?: string | null;
   }) => {
@@ -177,7 +274,7 @@ export default function ProfilPage() {
             <div className="relative">
               <div className={`${sizes[size]} rounded-full overflow-hidden border-4 border-yellow-500/40 group-hover:border-yellow-500 transition-all duration-300 shadow-lg group-hover:shadow-yellow-500/50 group-hover:scale-105`}>
                 <img 
-                  src={imagePath || `/assets/${name.toLowerCase().replace(/\s+/g, '_')}.jpeg`}
+                  src={getPhotoUrl(name)}
                   alt={name}
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -216,12 +313,12 @@ export default function ProfilPage() {
     );
   };
 
-  const MemberRow = ({ name, role, imagePath }: { name: string; role?: string; imagePath?: string }) => (
+  const MemberRow = ({ name, role }: { name: string; role?: string }) => (
     <div className="bg-black/40 backdrop-blur-sm p-3 rounded-xl border border-yellow-500/10 hover:border-yellow-500/30 hover:bg-black/60 transition-all duration-300 group">
       <div className="flex items-center gap-4">
         <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-yellow-500/30 group-hover:border-yellow-500/60 flex-shrink-0 transition-all duration-300 shadow-md group-hover:shadow-yellow-500/30">
           <img 
-            src={imagePath || `/struktur-organisasi/${name.toLowerCase().replace(/\s+/g, '_')}.jpeg`}
+            src={getPhotoUrl(name)}
             alt={name}
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -561,14 +658,12 @@ export default function ProfilPage() {
                     <PersonCard 
                       name="Bangkit Filippo Pane"
                       role="Kepala Dewan"
-                      imagePath="/pasfoto-anggota/Tk1/"
                       size="xl"
                       badge="👑"
                     />
                     <PersonCard 
                       name="Muhammad Riza Halilullah"
                       role="Wakil Dewan"
-                      imagePath="/assets/riza.jpeg"
                       size="xl"
                       badge="⭐"
                     />
@@ -591,13 +686,11 @@ export default function ProfilPage() {
                 <PersonCard 
                   name="Shavy Salsa Agustin"
                   role="Sekretaris"
-                  imagePath="/assets/shavy.jpeg"
                   size="lg"
                 />
                 <PersonCard 
                   name="Rifda Alverina Rachman"
                   role="Kepala Bagian Keuangan"
-                  imagePath="/assets/rifda.jpeg"
                   size="lg"
                 />
               </div>
@@ -609,8 +702,8 @@ export default function ProfilPage() {
                   Staf Khusus Keuangan
                 </h4>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <MemberRow name="Firda Royyani Yudhantari" imagePath="/assets/firda.jpeg" />
-                  <MemberRow name="Shofah Aprilia Riyanto" imagePath="/assets/shofah.jpeg" />
+                  <MemberRow name="Firda Royyani Yudhantari" />
+                  <MemberRow name="Shofah Aprilia Riyanto" />
                 </div>
               </div>
 
@@ -625,7 +718,6 @@ export default function ProfilPage() {
                   <PersonCard 
                     name="Nawang Wulan Yuli Astuti"
                     role="Kepala Bagian"
-                    imagePath="/assets/nawang.jpeg"
                     size="md"
                   />
                 </div>
@@ -642,24 +734,15 @@ export default function ProfilPage() {
                       <PersonCard 
                         name="Adinda Aulia Putri"
                         role="Kepala Subbagian"
-                        imagePath="/assets/adinda.jpeg"
                         size="sm"
                       />
                     </div>
                     
                     <div className="space-y-3 mt-4">
-                      {[
-                        { name: 'Triani Martauli Tondang', img: 'triani' },
-                        { name: 'Imam Zhafran Kaharuddin', img: 'imam' },
-                        { name: 'Gigih Nanda Wirayuda', img: 'gigih' },
-                        { name: 'Mahardika Suwardana Putra', img: 'mahardika' }
-                      ].map((staff, idx) => (
-                        <MemberRow 
-                          key={idx}
-                          name={staff.name}
-                          imagePath={`/assets/${staff.img}.jpeg`}
-                        />
-                      ))}
+                      <MemberRow name="Triani Martauli Tondang" />
+                      <MemberRow name="Imam Zhafran Kaharuddin" />
+                      <MemberRow name="Gigih Nanda Wirayuda" />
+                      <MemberRow name="Mahardika Suwardana Putra" />
                     </div>
                   </div>
                   
@@ -674,24 +757,15 @@ export default function ProfilPage() {
                       <PersonCard 
                         name="Mutiara Callista Prasmestya"
                         role="Kepala Subbagian"
-                        imagePath="/assets/mutiara.jpeg"
                         size="sm"
                       />
                     </div>
                     
                     <div className="space-y-3 mt-4">
-                      {[
-                        { name: 'Ardanendra', img: 'ardanendra' },
-                        { name: 'Januar Gangga Pratama', img: 'januar' },
-                        { name: 'Sasabilla Detatama', img: 'sasabilla' },
-                        { name: 'Marisa Debora Letty DF', img: 'marisa' }
-                      ].map((staff, idx) => (
-                        <MemberRow 
-                          key={idx}
-                          name={staff.name}
-                          imagePath={`/assets/${staff.img}.jpeg`}
-                        />
-                      ))}
+                      <MemberRow name="Ardanendra" />
+                      <MemberRow name="Januar Gangga Pratama" />
+                      <MemberRow name="Sasabilla Detatama" />
+                      <MemberRow name="Marisa Debora Letty DF" />
                     </div>
                   </div>
                 </div>
@@ -720,7 +794,7 @@ export default function ProfilPage() {
                             <div className="flex items-center gap-3 bg-black/30 px-3 py-2 rounded-lg">
                               <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-yellow-500/40">
                                 <img 
-                                  src={`/assets/${komisi.kepala.toLowerCase().replace(/\s+/g, '_')}.jpeg`}
+                                  src={getPhotoUrl(komisi.kepala)}
                                   alt={komisi.kepala}
                                   className="w-full h-full object-cover"
                                   onError={(e) => {
@@ -745,7 +819,7 @@ export default function ProfilPage() {
                             <div className="flex items-center gap-3 bg-black/30 px-3 py-2 rounded-lg">
                               <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-yellow-500/40">
                                 <img 
-                                  src={`/assets/${komisi.wakil.toLowerCase().replace(/\s+/g, '_')}.jpeg`}
+                                  src={getPhotoUrl(komisi.wakil)}
                                   alt={komisi.wakil}
                                   className="w-full h-full object-cover"
                                   onError={(e) => {
@@ -792,7 +866,7 @@ export default function ProfilPage() {
                                     <div className="flex items-start gap-4">
                                       <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-yellow-500/40 group-hover:border-yellow-500/70 flex-shrink-0 transition-all shadow-lg group-hover:shadow-yellow-500/30">
                                         <img 
-                                          src={`/assets/${sub.kepala.toLowerCase().replace(/\s+/g, '_')}.jpeg`}
+                                          src={getPhotoUrl(sub.kepala)}
                                           alt={sub.kepala}
                                           className="w-full h-full object-cover"
                                           onError={(e) => {
