@@ -105,7 +105,7 @@ export default function LaporanPage() {
                 <ClipboardMinus size={48} className="text-black" />
               </div>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold">
+            <h1 className="text-3xl md:text-5xl font-bold text-white">
               Laporan <span className="text-yellow-500">Demustar</span>
             </h1>
 
