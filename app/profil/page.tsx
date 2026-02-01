@@ -17,13 +17,13 @@ export default function ProfilPage() {
   ========================== */
   const biroData = [
     {
-      name: 'BIRO KEUANGAN',
+      name: 'KEUANGAN',
       icon: BookOpen,
       kepala: 'Rifda Alverina Rachman',
       staf: ['Firda Royyani Yudhantari', 'Shofah Aprilia Riyanto']
     },
     {
-      name: 'BIRO TATA USAHA',
+      name: 'TATA USAHA',
       icon: FileText,
       kepala: 'Nawang Wulan Yuli Astuti',
       subbagian: [
@@ -751,9 +751,34 @@ export default function ProfilPage() {
               <h3 className="text-2xl md:text-3xl font-bold text-yellow-500">
                 {biro.name}
               </h3>
-              <p className="text-sm text-gray-400">
-                Kepala: <span className="text-white font-semibold">{biro.kepala}</span>
-              </p>
+                            <div className="flex flex-wrap gap-4 text-sm">
+                            <div className="flex items-center gap-3 bg-black/30 px-3 py-2 rounded-lg">
+                              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-yellow-500/40">
+                                <img 
+                                  src={getPhotoUrl(biro.kepala)}
+                                  alt={biro.kepala}
+                                  className="w-full h-full object-cover"
+                                  onError={(e) => {
+                                    const target = e.currentTarget;
+                                    target.style.display = 'none';
+                                    const parent = target.parentElement;
+                                    if (parent) {
+                                      parent.classList.add('bg-gradient-to-br', 'from-yellow-500', 'to-yellow-600');
+                                      const icon = document.createElement('div');
+                                      icon.className = 'w-full h-full flex items-center justify-center text-white text-xs';
+                                      icon.innerHTML = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>';
+                                      parent.appendChild(icon);
+                                    }
+                                  }}
+                                />
+                              </div>
+                              <div>
+                                <p className="text-gray-400 text-xs">Kepala</p>
+                                <p className="text-white font-semibold">{biro.kepala}</p>
+                              </div>
+                            </div>
+                            
+                          </div>
             </div>
           </div>
 
