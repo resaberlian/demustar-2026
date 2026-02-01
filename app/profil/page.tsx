@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { Users, Target, BookOpen, Shield, Award, ChevronDown, ChevronUp, Star, FileText, Activity } from 'lucide-react';
+import Image from "next/image";
+
 
 export default function ProfilPage() {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
@@ -10,6 +12,44 @@ export default function ProfilPage() {
     setExpandedSection(expandedSection === section ? null : section);
   };
 
+    /* ==========================
+     BIRO (TATA USAHA & KEUANGAN)
+  ========================== */
+  const biroData = [
+    {
+      name: 'BIRO KEUANGAN',
+      icon: BookOpen,
+      kepala: 'Rifda Alverina Rachman',
+      staf: ['Firda Royyani Yudhantari', 'Shofah Aprilia Riyanto']
+    },
+    {
+      name: 'BIRO TATA USAHA',
+      icon: FileText,
+      kepala: 'Nawang Wulan Yuli Astuti',
+      subbagian: [
+        {
+          nama: 'Administrasi',
+          kepala: 'Adinda Aulia Putri',
+          staf: [
+            'Triani Martauli Tondang',
+            'Imam Zhafran Kaharuddin',
+            'Gigih Nanda Wirayuda',
+            'Mahardika Suwardana Putra'
+          ]
+        },
+        {
+          nama: 'Umum',
+          kepala: 'Mutiara Callista Prasmestya',
+          staf: [
+            'Ardanendra',
+            'Januar Gangga Pratama',
+            'Sasabilla Detatama',
+            'Marisa Debora Letty DF'
+          ]
+        }
+      ]
+    }
+  ];
   // ==========================================
   // MAPPING URL FOTO - COPAS URL DI SINI
   // ==========================================
@@ -154,6 +194,7 @@ export default function ProfilPage() {
   ];
 
   const komisData = [
+
     {
       name: "KOMISI I (KETARUNAAN)",
       kepala: "Muhammad Adib Iqbal",
@@ -356,7 +397,7 @@ export default function ProfilPage() {
           <div className="text-center mb-12">
             <div className="inline-block mb-6">
               <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl shadow-yellow-500/50">
-                <Shield size={48} className="text-black" />
+                    <Image src="/logo.PNG"  alt="Logo DEMUSTAR" width={100}  height={100} priority className="w-16 h-16 md:w-20 md:h-20 " />
               </div>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-4">
@@ -650,130 +691,156 @@ export default function ProfilPage() {
               </p>
             </div>
             
-            {/* Pimpinan Utama */}
-            <div className="mb-16">
-              <div className="bg-gradient-to-br from-yellow-500 via-yellow-600 to-yellow-700 rounded-3xl p-1 shadow-2xl shadow-yellow-500/30">
-                <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 md:p-12">
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <PersonCard 
-                      name="Bangkit Filippo Pane"
-                      role="Kepala Dewan"
-                      size="xl"
-                      badge="👑"
-                    />
-                    <PersonCard 
-                      name="Muhammad Riza Halilullah"
-                      role="Wakil Dewan"
-                      size="xl"
-                      badge="⭐"
-                    />
-                  </div>
-                </div>
-              </div>
+         
+
+      {/* ================= PIMPINAN ================= */}
+      <section className="py-20">
+       
+
+        <div className="max-w-5xl mx-auto bg-gradient-to-br from-yellow-500 to-yellow-600 p-1 rounded-3xl">
+          <div className="bg-black rounded-3xl p-10 grid md:grid-cols-2 gap-8">
+            <PersonCard
+              name="Bangkit Filippo Pane"
+              role="Kepala Demustar"
+              size="xl"
+       
+            />
+            <PersonCard
+              name="Muhammad Riza Halilullah"
+              role="Wakil Ketua Demustar"
+              size="xl"
+            />
+            
+          </div>
+          <div className="bg-black rounded-3xl p-10 grid md:grid-cols-1 gap-8">
+                <PersonCard
+              name="Shavy Salsa Agustin"
+              role="Sekretaris Demustar"
+              size="lg"
+            />
+
+          </div>
+          
+        </div>
+      </section>
+
+{/* ================= BIRO ================= */}
+<div className="space-y-6 mt-16">
+  {biroData.map((biro, index) => {
+    const IconComponent = biro.icon;
+    const isExpanded = expandedSection === `biro-${index}`;
+
+    return (
+      <div
+        key={index}
+        className="bg-gradient-to-br from-gray-800/80 to-black/80 backdrop-blur-sm
+                   border border-yellow-500/30 rounded-2xl overflow-hidden
+                   hover:border-yellow-500/50 transition-all shadow-xl"
+      >
+        {/* HEADER */}
+        <button
+          onClick={() => toggleSection(`biro-${index}`)}
+          className="w-full p-6 flex justify-between items-center hover:bg-yellow-500/5 transition-colors group"
+        >
+          <div className="flex items-center gap-4">
+            <div className="w-14 h-14 bg-yellow-500/20 rounded-xl flex items-center justify-center border border-yellow-500/30">
+              <IconComponent className="text-yellow-500" size={28} />
             </div>
 
-            {/* Sekretariat */}
-            <div className="bg-gradient-to-br from-gray-800/80 to-black/80 backdrop-blur-sm border border-yellow-500/30 rounded-2xl p-8 mb-12 hover:border-yellow-500/50 transition-all duration-300 shadow-xl">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center border border-yellow-500/30">
-                  <Users className="text-yellow-500" size={24} />
-                </div>
-                <h3 className="text-2xl font-bold text-yellow-500">Sekretariat</h3>
-              </div>
-              
-              {/* Pimpinan Sekretariat */}
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <PersonCard 
-                  name="Shavy Salsa Agustin"
-                  role="Sekretaris"
-                  size="lg"
-                />
-                <PersonCard 
-                  name="Rifda Alverina Rachman"
-                  role="Kepala Bagian Keuangan"
-                  size="lg"
-                />
-              </div>
-              
-              {/* Staf Khusus Keuangan */}
-              <div className="mb-8">
-                <h4 className="text-yellow-400 font-bold text-lg mb-4 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
-                  Staf Khusus Keuangan
+            <div className="text-left">
+              <h3 className="text-2xl md:text-3xl font-bold text-yellow-500">
+                {biro.name}
+              </h3>
+              <p className="text-sm text-gray-400">
+                Kepala: <span className="text-white font-semibold">{biro.kepala}</span>
+              </p>
+            </div>
+          </div>
+
+          {isExpanded ? (
+            <ChevronUp className="text-yellow-500" size={28} />
+          ) : (
+            <ChevronDown className="text-yellow-500" size={28} />
+          )}
+        </button>
+
+        {/* CONTENT */}
+        {isExpanded && (
+          <div className="px-6 pb-6">
+            <div className="border-t border-yellow-500/20 pt-6 space-y-8">
+
+              {/* KEPALA BIRO */}
+              <div>
+                <h4 className="text-yellow-400 font-bold text-xl mb-4">
+                  Kepala Biro
                 </h4>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <MemberRow name="Firda Royyani Yudhantari" />
-                  <MemberRow name="Shofah Aprilia Riyanto" />
-                </div>
+                <PersonCard
+                  name={biro.kepala}
+                  role="Kepala Biro"
+                  size="lg"
+                />
               </div>
 
-              {/* Tata Usaha */}
-              <div className="bg-gradient-to-br from-black/50 to-transparent p-6 rounded-xl border border-yellow-500/20">
-                <h4 className="text-yellow-400 font-bold text-xl mb-6 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
-                  Bagian Tata Usaha
-                </h4>
-                
-                <div className="mb-6">
-                  <PersonCard 
-                    name="Nawang Wulan Yuli Astuti"
-                    role="Kepala Bagian"
-                    size="md"
-                  />
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  {/* Subbagian Administrasi */}
-                  <div className="bg-black/30 p-5 rounded-lg border border-yellow-500/10">
-                    <p className="text-yellow-400 font-semibold mb-4 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></span>
-                      Subbagian Administrasi
-                    </p>
-                    
-                    <div className="mb-4">
-                      <PersonCard 
-                        name="Adinda Aulia Putri"
-                        role="Kepala Subbagian"
-                        size="sm"
-                      />
-                    </div>
-                    
-                    <div className="space-y-3 mt-4">
-                      <MemberRow name="Triani Martauli Tondang" />
-                      <MemberRow name="Imam Zhafran Kaharuddin" />
-                      <MemberRow name="Gigih Nanda Wirayuda" />
-                      <MemberRow name="Mahardika Suwardana Putra" />
-                    </div>
-                  </div>
-                  
-                  {/* Subbagian Umum */}
-                  <div className="bg-black/30 p-5 rounded-lg border border-yellow-500/10">
-                    <p className="text-yellow-400 font-semibold mb-4 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></span>
-                      Subbagian Umum
-                    </p>
-                    
-                    <div className="mb-4">
-                      <PersonCard 
-                        name="Mutiara Callista Prasmestya"
-                        role="Kepala Subbagian"
-                        size="sm"
-                      />
-                    </div>
-                    
-                    <div className="space-y-3 mt-4">
-                      <MemberRow name="Ardanendra" />
-                      <MemberRow name="Januar Gangga Pratama" />
-                      <MemberRow name="Sasabilla Detatama" />
-                      <MemberRow name="Marisa Debora Letty DF" />
-                    </div>
+              {/* SUBBAGIAN */}
+              {biro.subbagian && (
+                <div>
+                  <h4 className="text-yellow-400 font-bold text-xl mb-6">
+                    Subbagian
+                  </h4>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {biro.subbagian.map((sub, i) => (
+                      <div
+                        key={i}
+                        className="bg-black/50 p-5 rounded-xl border border-yellow-500/20"
+                      >
+                        <p className="text-yellow-400 font-bold mb-4">
+                          {sub.nama}
+                        </p>
+
+                        <PersonCard
+                          name={sub.kepala}
+                          role="Kepala Subbagian"
+                          size="md"
+                        />
+
+                        <div className="grid md:grid-cols-2 gap-4 mt-4">
+                          {sub.staf.map((s, j) => (
+                            <MemberRow key={j} name={s} />
+                          ))}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
+              )}
+
+              {/* STAF */}
+              {biro.staf && (
+                <div>
+                  <h4 className="text-yellow-400 font-bold text-xl mb-6">
+                    Staf
+                  </h4>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {biro.staf.map((s, i) => (
+                      <MemberRow key={i} name={s} />
+                    ))}
+                  </div>
+                </div>
+              )}
+
             </div>
+          </div>
+        )}
+      </div>
+    );
+  })}
+</div>
+
+
 
             {/* Komisi-Komisi */}
-            <div className="space-y-6">
+            <div className="space-y-6 pt-6">
               {komisData.map((komisi, index) => {
                 const IconComponent = komisi.icon;
                 const isExpanded = expandedSection === `komisi-${index}`;
