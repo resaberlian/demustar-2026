@@ -3,7 +3,7 @@
 import { supabase } from "../../src/lib/supabase";
 import { ClipboardMinus } from "lucide-react";
 import { useEffect, useState } from "react";
-
+import Image from "next/image";
 interface Laporan {
   id: number;
   judul: string;
@@ -88,34 +88,104 @@ export default function LaporanPage() {
   return (
     <>
       {/* HEADER PROGRAM KERJA */}
-      <section className="relative bg-gradient-to-br from-black via-gray-900 to-black py-5 md:py-15 border-b border-yellow-500/30 ">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#050b18] to-black" />
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage:
-              "radial-gradient(#facc15 1px, transparent 1px)",
-            backgroundSize: "20px 20px",
-          }}
+    <section className="relative overflow-hidden py-24 border-b border-yellow-500/20">
+    
+      {/* BACKGROUND */}
+      <div className="absolute inset-0">
+        <Image
+          src="/assets/5.jpeg"
+          alt="Background"
+          fill
+          priority
+          className="object-cover"
         />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-block mb-6">
-              <div className="w-24 h-24 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl shadow-yellow-500/50">
-                <ClipboardMinus size={48} className="text-black" />
-              </div>
+    
+        {/* dark official overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+    
+        {/* subtle gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
+      </div>
+    
+      {/* CONTENT */}
+      <div className="relative z-10 container mx-auto px-6">
+    
+        <div className="max-w-4xl mx-auto">
+    
+          {/* MAIN PANEL */}
+          <div className="
+            relative
+            bg-gradient-to-br from-gray-900/95 to-black/95
+            backdrop-blur-xl
+            border border-yellow-500/30
+            rounded-3xl
+            px-10 py-14
+            shadow-2xl shadow-yellow-600/10
+          ">
+    
+            {/* GOLD ACCENT BAR */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 rounded-b-3xl"></div>
+    
+            {/* BADGE */}
+            <div className="text-center mb-6">
+              <span className="
+                inline-block
+                px-5 py-2
+                bg-yellow-500/10
+                border border-yellow-500/40
+                text-yellow-400
+                rounded-full
+                text-sm font-semibold
+                tracking-wide
+              ">
+               LAPORAN
+              </span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-white">
-              Laporan <span className="text-yellow-500">Demustar</span>
+    
+            {/* TITLE */}
+            <h1 className="
+              text-center
+              text-4xl md:text-6xl
+              font-extrabold
+              leading-tight
+              mb-6
+            ">
+              <span className="text-white">Laporan Kerja</span>{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
+                Demustar
+              </span>
             </h1>
-
-            <p className="text-gray-300 max-w-2xl mx-auto text-md pt-5">
-              Kumpulan laporan kegiatan dan dokumentasi pelaksanaan program kerja Dewan Musyawarah Taruna sebagai bentuk transparansi dan pertanggungjawaban organisasi.
-            </p>
+    
+           
+            {/* DIVIDER */}
+            <div className="flex items-center justify-center gap-3 mt-8">
+              <div className="h-px w-20 bg-gradient-to-r from-transparent to-yellow-500"></div>
+              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+              <div className="h-px w-20 bg-gradient-to-l from-transparent to-yellow-500"></div>
+            </div>
+    
+            {/* TAGLINE */}
+            <div className="mt-8 text-center">
+              <span className="
+                inline-flex items-center gap-2
+                px-6 py-3
+                bg-yellow-500/10
+                border border-yellow-500/30
+                rounded-full
+                text-yellow-400
+                font-semibold
+                text-sm
+              ">
+                Aspiratif • Kolaboratif • Solutif
+              </span>
+            </div>
+    
           </div>
+    
         </div>
-      </section>
-
+      </div>
+    </section>
+    
       <div className="min-h-screen bg-black text-white py-10 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10">
           {laporan.length === 0 ? (

@@ -1,8 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { supabase } from "../src/lib/supabase";
+import { motion } from "framer-motion";
 
 export default async function Home() {
+  
+const cardVariant = {
+  hiddenLeft: { opacity: 0, x: -60 },
+  hiddenRight: { opacity: 0, x: 60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: "easeOut" }
+  }
+};
   const { data: programs } = await supabase
     .from("program_kerja")
     .select("*")
@@ -12,131 +23,172 @@ export default async function Home() {
       {/* Navigation */}
       
       {/* Hero Section */}
-      <section id="beranda" className="pt-12 pb-12 relative overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      {/* Radial Glow Background (Animated) */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-yellow-600/20 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] bg-yellow-500/15 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s', animationDuration: '3s' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-yellow-600/10 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: '2s', animationDuration: '4s' }}></div>
-        <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-orange-600/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '0.5s', animationDuration: '5s' }}></div>
-      </div>
+<section id="beranda" className="relative overflow-hidden min-h-screen">
+  {/* Background Image with Overlay */}
+  <div className="absolute inset-0">
+    <Image
+      src="/assets/1.jpeg"
+      alt="Background DEMUSTAR Poltekpin"
+      fill
+      priority
+      className="object-cover object-center"
+    />
+    {/* Dark Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-black/85 to-gray-900/90" />
+    
+    {/* Animated Glow Effects */}
+    <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute top-1/4 -left-1/4 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-yellow-600/20 rounded-full blur-[120px] animate-pulse"></div>
+      <div className="absolute bottom-1/4 -right-1/4 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-yellow-500/15 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s', animationDuration: '3s' }}></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[700px] md:h-[700px] bg-yellow-600/10 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: '2s', animationDuration: '4s' }}></div>
+    </div>
+  </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          {/* Left Content */}
-          <div className="space-y-6">
-            <div className="inline-block">
-              <span className="px-4 py-2 bg-yellow-600/20 border border-yellow-600 text-yellow-500 rounded-full text-xs font-semibold md:text-md">
-                Parlemen Absolut
-              </span>
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              Selamat Datang di{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-700">
-                Demustar
-              </span>
-            </h1>
-            
-            <h2 className="text-2xl md:text-3xl text-yellow-500 font-semibold">
-              Politeknik Pengayoman Indonesia
-            </h2>
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center min-h-screen py-12 sm:py-16 lg:py-20">
+      
+      {/* Left Content - Main Info Card (Glassmorphism) */}
+      <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl">
+        <div className="space-y-4 sm:space-y-6">
+          {/* Badge */}
+          <div className="inline-block">
+            <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-yellow-600/30 backdrop-blur-sm border border-yellow-500/50 text-yellow-400 rounded-full text-xs sm:text-sm font-semibold">
+              Parlemen Absolut
+            </span>
+          </div>
+          
+          {/* Main Heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+            Selamat Datang di{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
+              Demustar
+            </span>
+          </h1>
+          
+          {/* Subtitle */}
+          <h2 className="text-xl sm:text-2xl lg:text-3xl text-yellow-400 font-semibold">
+            Politeknik Pengayoman Indonesia
+          </h2>
 
-            <div className="space-y-4 text-gray-300">
-              <p className="text-xs leading-relaxed md:text-lg">
-                <strong className="text-yellow-500">Dewan Musyawarah Taruna Poltekpin</strong> adalah wadah aspirasi dan representasi taruna dalam menyuarakan kepentingan bersama.
-              </p>
-              <p className="text-xs leading-relaxed md:text-lg">
-                Kami hadir sebagai parlemen yang <span className="text-yellow-500 font-semibold">Aspiratif, Kolaboratif, dan Solutif</span> untuk menciptakan lingkungan kampus yang lebih baik.
-              </p>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="pt-6 space-y-4">
-              <h3 className="text-lg font-semibold text-yellow-500 mb-4">
-                Sampaikan Aspirasi Anda Melalui:
-              </h3>
-              
-              <a 
-                href="#" 
-                className="inline-flex items-center space-x-3 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg shadow-yellow-600/50"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                <a 
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSe4VFTHU4H6u60ePmcpdBLWS6GFjhPdUpUf7eHXcyQn0NSEsg/viewform?pli=1" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className=""
-                  >
-                SALUR - Form Aspirasi</a>
-              </a>
-
-              <div className="pt-4">
-                <p className="text-gray-400 mb-3 font-medium">Ikuti Media Sosial Kami:</p>
-                <div className="flex flex-wrap gap-4">
-                  <a 
-                    href="https://instagram.com/demustar_poltekpin" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 bg-yellow-600/10 hover:bg-yellow-600/20 border border-yellow-600/50 px-6 py-3 rounded-lg transition-all hover:border-yellow-600"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                    <span className="text-yellow-500">@demustar_poltekpin</span>
-                  </a>
-                  
-                  
-                </div>
-              </div>
-            </div>
+          {/* Description */}
+          <div className="space-y-3 sm:space-y-4 text-gray-200">
+            <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
+              <strong className="text-yellow-400">Dewan Musyawarah Taruna Poltekpin</strong> adalah wadah aspirasi dan representasi taruna dalam menyuarakan kepentingan bersama.
+            </p>
+            <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
+              Kami hadir sebagai parlemen yang <span className="text-yellow-400 font-semibold">Aspiratif, Kolaboratif, dan Solutif</span> untuk menciptakan lingkungan kampus yang lebih baik.
+            </p>
           </div>
 
-          {/* Right Content - Banner Image */}
-          <div className="relative">
-            <div className="relative h-[600px] rounded-2xl overflow-hidden border-4 border-yellow-600 shadow-2xl shadow-yellow-600/20">
-
-              {/* IMAGE */}
-              <Image
-                src="/assets/1.jpeg"
-                alt="Kegiatan DEMUSTAR Poltekpin"
-                fill
-                priority
-                className="object-cover"
-              />
-
-              {/* OVERLAY */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/40 to-yellow-600/20" />
-
-              {/* TEXT OVER IMAGE */}
-              <div className="absolute bottom-10 left-10 right-10 z-10">
-                <h3 className="text-2xl md:text-3xl font-bold text-yellow-500 mb-2">
-                  DEMUSTAR POLTEKPIN
-                </h3>
-                <p className="text-gray-200 leading-relaxed">
-                  Dewan Musyawarah Taruna sebagai wadah aspirasi dan representasi taruna
-                  Politeknik Pengayoman Indonesia.
-                </p>
-              </div>
-
-              {/* DECORATIVE CORNERS */}
-              <div className="absolute top-0  bg-yellow-600/20 rounded-br-full"></div>
-              <div className="absolute bottom-0 right-0 w-32 h-32 bg-yellow-600/20 rounded-tl-full"></div>
+          {/* Values Badge - Responsive */}
+          <div className="inline-flex flex-wrap items-center gap-2 sm:gap-3 bg-gradient-to-r from-yellow-600/30 to-yellow-700/30 backdrop-blur-sm border border-yellow-500/40 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+              <span className="text-white font-semibold text-xs sm:text-sm">Aspiratif</span>
             </div>
-
-            {/* FLOATING BADGE */}
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-600 to-yellow-700 px-8 py-4 rounded-full shadow-lg shadow-yellow-600/50">
-              <p className="text-center font-bold text-lg whitespace-nowrap">
-                Aspiratif • Kolaboratif • Solutif
-              </p>
+            <span className="text-yellow-400 text-xs sm:text-sm">•</span>
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-400 rounded-full animate-pulse" style={{ animationDelay: '0.3s' }}></div>
+              <span className="text-white font-semibold text-xs sm:text-sm">Kolaboratif</span>
+            </div>
+            <span className="text-yellow-400 text-xs sm:text-sm">•</span>
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-400 rounded-full animate-pulse" style={{ animationDelay: '0.6s' }}></div>
+              <span className="text-white font-semibold text-xs sm:text-sm">Solutif</span>
             </div>
           </div>
-
         </div>
       </div>
-    </section>
+
+      {/* Right Content - Action Cards */}
+      <div className="space-y-4 sm:space-y-6">
+        
+        {/* Aspirasi Card (Glassmorphism) */}
+        <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 shadow-xl hover:bg-white/15 transition-all duration-300">
+          <div className="flex items-start gap-3 sm:gap-4 mb-4">
+            <div className="p-2.5 sm:p-3 bg-yellow-600/30 rounded-lg sm:rounded-xl border border-yellow-500/40 flex-shrink-0">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">
+                Sampaikan Aspirasi Anda
+              </h3>
+              <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">
+                Temukan layanan yang anda butuhkan disini!
+              </p>
+            </div>
+          </div>
+          
+          <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe4VFTHU4H6u60ePmcpdBLWS6GFjhPdUpUf7eHXcyQn0NSEsg/viewform?pli=1" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between w-full bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-white text-sm sm:text-base transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-yellow-600/30 group"
+          >
+            <span className="truncate">SALUR - Form Aspirasi</span>
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        {/* Social Media Card (Glassmorphism) */}
+        <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 shadow-xl">
+          <div className="flex items-center gap-2.5 sm:gap-3 mb-4">
+            <div className="p-2 bg-yellow-600/30 rounded-lg border border-yellow-500/40 flex-shrink-0">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+              </svg>
+            </div>
+            <h3 className="text-base sm:text-lg font-bold text-white">
+              Ikuti Media Sosial Kami
+            </h3>
+          </div>
+          
+          <a 
+            href="https://instagram.com/demustar_poltekpin" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between w-full bg-white/5 hover:bg-white/10 border border-yellow-500/30 hover:border-yellow-500/60 px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl transition-all group"
+          >
+            <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <div className="min-w-0 flex-1">
+                <p className="text-yellow-400 font-semibold text-sm sm:text-base truncate">@demustar_poltekpin</p>
+                <p className="text-gray-400 text-xs">Instagram</p>
+              </div>
+            </div>
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-yellow-400 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        {/* Info Card */}
+        <div className="backdrop-blur-xl bg-gradient-to-br from-yellow-600/20 to-yellow-700/20 border border-yellow-500/40 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl">
+          <div className="flex items-start gap-3 sm:gap-4">
+            <div className="p-2 bg-yellow-600/40 rounded-lg flex-shrink-0">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div className="min-w-0 flex-1">
+              <h4 className="text-yellow-300 font-bold mb-1 text-sm sm:text-base">DEMUSTAR POLTEKPIN</h4>
+              <p className="text-gray-200 text-xs sm:text-sm leading-relaxed">
+                Dewan Musyawarah Taruna sebagai wadah aspirasi dan representasi taruna Politeknik Pengayoman Indonesia.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Info Cards Section */}
       <section className="py-20 bg-gradient-to-b from-black to-gray-900">
@@ -188,7 +240,7 @@ export default async function Home() {
           {/* Left - Image Section - IMPROVED */}
           <div className="relative group">
             <div className="rounded-2xl overflow-hidden border-2 border-yellow-600/40 shadow-2xl shadow-yellow-600/30 transition-all duration-500 group-hover:border-yellow-500/60 group-hover:shadow-yellow-500/50">
-              <div className="relative h-[400px] bg-gradient-to-br from-yellow-600/10 to-black">
+              <div className="relative h- md:h-[400px] bg-gradient-to-br from-yellow-600/10 to-black">
                 
                 {/* Replace with actual image */}
                 <Image

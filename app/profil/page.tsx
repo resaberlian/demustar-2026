@@ -387,28 +387,104 @@ export default function ProfilPage() {
   return (
     <div className="min-h-screen bg-black text-white ">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-black via-gray-900 to-black py-5 md:py-15 border-b border-yellow-500/30">
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #D4AF37 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }}></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-block mb-6">
-              <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl shadow-yellow-500/50">
-                    <Image src="/logo.PNG"  alt="Logo DEMUSTAR" width={100}  height={100} priority className="w-16 h-16 md:w-20 md:h-20 " />
-              </div>
-            </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4">
-              Profil <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Demustar</span>
-            </h1>
-            <p className="text-md text-gray-300 max-w-3xl mx-auto">
-              Dewan Musyawarah Taruna Politeknik Pengayoman Indonesia
-            </p>
-          </div>
+<section className="relative overflow-hidden py-24 border-b border-yellow-500/20">
+
+  {/* BACKGROUND */}
+  <div className="absolute inset-0">
+    <Image
+      src="/assets/2.jpeg"
+      alt="Background"
+      fill
+      priority
+      className="object-cover"
+    />
+
+    {/* dark official overlay */}
+    <div className="absolute inset-0 bg-black/50" />
+
+    {/* subtle gradient */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
+  </div>
+
+  {/* CONTENT */}
+  <div className="relative z-10 container mx-auto px-6">
+
+    <div className="max-w-4xl mx-auto">
+
+      {/* MAIN PANEL */}
+      <div className="
+        relative
+        bg-gradient-to-br from-gray-900/95 to-black/95
+        backdrop-blur-xl
+        border border-yellow-500/30
+        rounded-3xl
+        px-10 py-14
+        shadow-2xl shadow-yellow-600/10
+      ">
+
+        {/* GOLD ACCENT BAR */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 rounded-b-3xl"></div>
+
+        {/* BADGE */}
+        <div className="text-center mb-6">
+          <span className="
+            inline-block
+            px-5 py-2
+            bg-yellow-500/10
+            border border-yellow-500/40
+            text-yellow-400
+            rounded-full
+            text-sm font-semibold
+            tracking-wide
+          ">
+            PROFIL ORGANISASI
+          </span>
         </div>
-      </section>
+
+        {/* TITLE */}
+        <h1 className="
+          text-center
+          text-4xl md:text-6xl
+          font-extrabold
+          leading-tight
+          mb-6
+        ">
+          <span className="text-white">Profil</span>{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
+            Demustar
+          </span>
+        </h1>
+
+       
+        {/* DIVIDER */}
+        <div className="flex items-center justify-center gap-3 mt-8">
+          <div className="h-px w-20 bg-gradient-to-r from-transparent to-yellow-500"></div>
+          <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+          <div className="h-px w-20 bg-gradient-to-l from-transparent to-yellow-500"></div>
+        </div>
+
+        {/* TAGLINE */}
+        <div className="mt-8 text-center">
+          <span className="
+            inline-flex items-center gap-2
+            px-6 py-3
+            bg-yellow-500/10
+            border border-yellow-500/30
+            rounded-full
+            text-yellow-400
+            font-semibold
+            text-sm
+          ">
+            Aspiratif • Kolaboratif • Solutif
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Sejarah Section */}
       <section className="py-16 bg-gradient-to-b from-black to-gray-900">
@@ -489,7 +565,7 @@ export default function ProfilPage() {
                   
                   <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 
                                 rounded-2xl flex items-center justify-center font-bold text-gray-900 text-lg
-                                shadow-lg shadow-yellow-500/50 rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                                shadow-lg shadow-yellow-500/50  group-hover:rotate-0 transition-transform duration-500">
                     {index + 1}
                   </div>
 
@@ -536,7 +612,7 @@ export default function ProfilPage() {
                   
                   <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 
                                 rounded-2xl flex items-center justify-center font-bold text-gray-900 text-lg
-                                shadow-lg shadow-yellow-500/50 rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                                shadow-lg shadow-yellow-500/50  group-hover:rotate-0 transition-transform duration-500">
                     {index + 3}
                   </div>
 
@@ -583,7 +659,7 @@ export default function ProfilPage() {
                   
                   <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 
                                 rounded-2xl flex items-center justify-center font-bold text-gray-900 text-lg
-                                shadow-lg shadow-yellow-500/50 rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                                shadow-lg shadow-yellow-500/50  group-hover:rotate-0 transition-transform duration-500">
                     {index + 6}
                   </div>
 
