@@ -83,9 +83,9 @@ export default function RootLayout({
               </h4>
               <div className="bg-black/50 rounded-lg overflow-hidden border border-yellow-600/30 hover:border-yellow-500 transition-colors">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.468018984142!2d106.797308!3d-6.333362799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ee5e1ba0a135%3A0x5b0a3fb0ec681dc3!2sPoliteknik%20Imigrasi!5e0!3m2!1sid!2sid!4v1770628657406!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.468018984142!2d106.797308!3d-6.333362799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ee5e1ba0a135%3A0x5b0a3fb0ec681dc3!2sPoliteknik%20Imigrasi!5e0!3m2!1sid!2sid!4v1770628657406!5m2!1sid!2sid" width="600" height="450"  loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="grayscale hover:grayscale-0 transition-all duration-300"
+                  className="grayscale hover:grayscale-0 transition-all duration-300 h-60 md:h-75"
                 ></iframe>
               </div>
             </div>
