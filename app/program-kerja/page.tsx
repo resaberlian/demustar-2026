@@ -14,7 +14,7 @@ export default async function ProgramKerjaPage() {
   return (
     <>
       {/* HEADER PROGRAM KERJA */}
- <section className="relative overflow-hidden py-24 border-b border-yellow-500/20">
+ <section className="relative overflow-hidden py-10 md:py-24 border-b border-yellow-500/20">
  
    {/* BACKGROUND */}
    <div className="absolute inset-0">
@@ -27,7 +27,7 @@ export default async function ProgramKerjaPage() {
      />
  
      {/* dark official overlay */}
-     <div className="absolute inset-0 bg-black/50" />
+     <div className="absolute inset-0 bg-black/10" />
  
      {/* subtle gradient */}
      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
@@ -49,8 +49,7 @@ export default async function ProgramKerjaPage() {
          shadow-2xl shadow-yellow-600/10
        ">
  
-         {/* GOLD ACCENT BAR */}
-         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 rounded-b-3xl"></div>
+       
  
          {/* BADGE */}
          <div className="text-center mb-6">

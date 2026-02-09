@@ -387,7 +387,7 @@ export default function ProfilPage() {
   return (
     <div className="min-h-screen bg-black text-white ">
       {/* Hero Section */}
-<section className="relative overflow-hidden py-24 border-b border-yellow-500/20">
+<section className="relative overflow-hidden py-10 md:py-24 border-b border-yellow-500/20">
 
   {/* BACKGROUND */}
   <div className="absolute inset-0">
@@ -400,7 +400,7 @@ export default function ProfilPage() {
     />
 
     {/* dark official overlay */}
-    <div className="absolute inset-0 bg-black/50" />
+    <div className="absolute inset-0 bg-black/10" />
 
     {/* subtle gradient */}
     <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
@@ -423,7 +423,7 @@ export default function ProfilPage() {
       ">
 
         {/* GOLD ACCENT BAR */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 rounded-b-3xl"></div>
+      
 
         {/* BADGE */}
         <div className="text-center mb-6">
@@ -489,7 +489,7 @@ export default function ProfilPage() {
       {/* Sejarah Section */}
       <section className="py-16 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
               <BookOpen className="text-yellow-500" size={32} />
               <h2 className="text-3xl md:text-5xl font-bold text-yellow-500">Sejarah Singkat</h2>
@@ -698,9 +698,9 @@ export default function ProfilPage() {
       </section>
 
       {/* Visi Misi Section */}
-      <section className="py-16 bg-gradient-to-b from-black to-gray-900">
+      <section className="pt-16 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
               <Target className="text-yellow-500" size={32} />
               <h2 className="text-3xl md:text-5xl font-bold text-yellow-500">Visi & Misi</h2>
@@ -770,7 +770,7 @@ export default function ProfilPage() {
          
 
       {/* ================= PIMPINAN ================= */}
-      <section className="py-20">
+      <section className="py-4">
        
 
         <div className="max-w-5xl mx-auto bg-gradient-to-br from-yellow-500 to-yellow-600 p-1 rounded-3xl">

@@ -31,45 +31,48 @@ export default function RootLayout({
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
             
             {/* Left Side - Logos */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-              <div className="flex items-center gap-4">
-                {/* Logo DEMUSTAR */}
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full p-2 flex items-center justify-center">
-                    <Image
-                      src="/logo.PNG"
-                      alt="Logo DEMUSTAR"
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                
-                {/* Logo Poltekpin */}
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full p-2 flex items-center justify-center">
-                    <Image
-                      src="/assets/logo-poltekpin.png"
-                      alt="Logo Poltekpin"
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
-              
-              {/* Institution Info */}
-              <div className="text-center sm:text-left">
-                <h3 className="text-lg sm:text-xl font-bold text-yellow-400 mb-2">
-                  Politeknik Pengayoman Indonesia
-                </h3>
-                <p className="text-gray-300 text-xs sm:text-sm leading-relaxed max-w-xl">
-                  Tanah Tinggi, Kec. Tangerang, Kota Tangerang, Banten 15119
-                </p>
-              </div>
-            </div>
+<div className="flex flex-col items-start gap-5 text-center">
+
+  {/* LOGO ROW */}
+  <div className="flex items-center gap-4">
+
+    {/* Logo DEMUSTAR */}
+    <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full p-2 flex items-center justify-center">
+      <Image
+        src="/logo.PNG"
+        alt="Logo DEMUSTAR"
+        width={80}
+        height={80}
+        className="object-contain"
+      />
+    </div>
+
+    {/* Logo Poltekpin */}
+    <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full p-2 flex items-center justify-center">
+      <Image
+        src="/logo.PNG"
+        alt="Logo Poltekpin"
+        width={80}
+        height={80}
+        className="object-contain"
+      />
+    </div>
+
+  </div>
+
+  {/* TEXT DI BAWAH LOGO */}
+  <div>
+    <h3 className="text-lg sm:text-xl font-bold text-yellow-400 mb-2 text-left">
+      Politeknik Pengayoman Indonesia
+    </h3>
+
+    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed max-w-xl">
+      Tanah Tinggi, Kec. Tangerang, Kota Tangerang, Banten 15119
+    </p>
+  </div>
+
+</div>
+
 
             {/* Right Side - Address Badge */}
             <div className="flex justify-center ">
@@ -81,13 +84,16 @@ export default function RootLayout({
                 </svg>
                 Lokasi
               </h4>
-              <div className="bg-black/50 rounded-lg overflow-hidden border border-yellow-600/30 hover:border-yellow-500 transition-colors">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.468018984142!2d106.797308!3d-6.333362799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ee5e1ba0a135%3A0x5b0a3fb0ec681dc3!2sPoliteknik%20Imigrasi!5e0!3m2!1sid!2sid!4v1770628657406!5m2!1sid!2sid" width="600" height="450"  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="grayscale hover:grayscale-0 transition-all duration-300 h-60 md:h-75"
-                ></iframe>
-              </div>
+             <div className="w-full h-[300px] md:h-[250px] rounded-xl overflow-hidden border border-yellow-500/30">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.468018984142!2d106.797308!3d-6.333362799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ee5e1ba0a135%3A0x5b0a3fb0ec681dc3!2sPoliteknik%20Imigrasi!5e0!3m2!1sid!2sid!4v1770628657406!5m2!1sid!2sid"
+    className="w-full h-full border-0 grayscale hover:grayscale-0 transition duration-300"
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    allowFullScreen
+  />
+</div>
+
             </div>
             </div>
           </div>
