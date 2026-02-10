@@ -35,6 +35,9 @@ const cardVariant = {
     />
     {/* Dark Overlay */}
     <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-black/85 to-gray-900/90" />
+    {/* Bottom Fade Transition */}
+<div className="absolute inset-x-0 bottom-0 h-48 md:h-64 bg-gradient-to-t from-black via-black/70 to-transparent" />
+
     
     {/* Animated Glow Effects */}
     <div className="absolute inset-0 overflow-hidden">
@@ -177,8 +180,8 @@ const cardVariant = {
               </svg>
             </div>
             <div className="min-w-0 flex-1">
-              <h4 className="text-yellow-300 font-bold mb-1 text-sm sm:text-base">DEMUSTAR POLTEKPIN</h4>
-              <p className="text-gray-200 text-xs sm:text-sm leading-relaxed">
+              <h4 className="text-yellow-300 font-bold mb-1 text-lg sm:text-base">DEMUSTAR POLTEKPIN</h4>
+              <p className="text-gray-200 text-md sm:text-sm leading-relaxed">
                 Dewan Musyawarah Taruna sebagai wadah aspirasi dan representasi taruna Politeknik Pengayoman Indonesia.
               </p>
             </div>
@@ -189,43 +192,60 @@ const cardVariant = {
     </div>
   </div>
 </section>
-
-      {/* Info Cards Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-yellow-600/10 to-black border border-yellow-600/30 p-8 rounded-xl hover:border-yellow-600 transition-all">
-              <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-yellow-500 mb-3">Aspiratif</h3>
-              <p className="text-gray-400">Menampung dan menyuarakan setiap aspirasi taruna dengan penuh tanggung jawab.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-yellow-600/10 to-black border border-yellow-600/30 p-8 rounded-xl hover:border-yellow-600 transition-all">
-              <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-yellow-500 mb-3">Kolaboratif</h3>
-              <p className="text-gray-400">Bekerja sama dengan seluruh stakeholder untuk kemajuan bersama.</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-yellow-600/10 to-black border border-yellow-600/30 p-8 rounded-xl hover:border-yellow-600 transition-all">
-              <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-yellow-500 mb-3">Solutif</h3>
-              <p className="text-gray-400">Memberikan solusi konkret untuk setiap permasalahan yang ada.</p>
-            </div>
-          </div>
+{/* Info Cards Section */}
+<section className="py-20 bg-gradient-to-b from-black to-gray-900">
+  <div className="container mx-auto px-4">
+    <div className="grid md:grid-cols-3 gap-8">
+      <div 
+        className="bg-gradient-to-br from-yellow-600/10 to-black border border-yellow-600/30 p-8 rounded-xl hover:border-yellow-600 transition-all"
+        style={{
+          animation: 'fadeIn 0.6s ease-out forwards',
+          opacity: 0
+        }}
+      >
+        <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mb-6">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+          </svg>
         </div>
-      </section>
+        <h3 className="text-2xl font-bold text-yellow-500 mb-3">Aspiratif</h3>
+        <p className="text-gray-400">Menampung dan menyuarakan setiap aspirasi taruna dengan penuh tanggung jawab.</p>
+      </div>
+
+      <div 
+        className="bg-gradient-to-br from-yellow-600/10 to-black border border-yellow-600/30 p-8 rounded-xl hover:border-yellow-600 transition-all"
+        style={{
+          animation: 'fadeIn 0.6s ease-out 0.2s forwards',
+          opacity: 0
+        }}
+      >
+        <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mb-6">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </div>
+        <h3 className="text-2xl font-bold text-yellow-500 mb-3">Kolaboratif</h3>
+        <p className="text-gray-400">Bekerja sama dengan seluruh stakeholder untuk kemajuan bersama.</p>
+      </div>
+
+      <div 
+        className="bg-gradient-to-br from-yellow-600/10 to-black border border-yellow-600/30 p-8 rounded-xl hover:border-yellow-600 transition-all"
+        style={{
+          animation: 'fadeIn 0.6s ease-out 0.4s forwards',
+          opacity: 0
+        }}
+      >
+        <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mb-6">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 className="text-2xl font-bold text-yellow-500 mb-3">Solutif</h3>
+        <p className="text-gray-400">Memberikan solusi konkret untuk setiap permasalahan yang ada.</p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* Profil Singkat Demustar */}
       <section className="py-20 bg-black relative overflow-hidden">
       {/* Background Glow Effect */}
@@ -240,7 +260,7 @@ const cardVariant = {
           {/* Left - Image Section - IMPROVED */}
           <div className="relative group">
             <div className="rounded-2xl overflow-hidden border-2 border-yellow-600/40 shadow-2xl shadow-yellow-600/30 transition-all duration-500 group-hover:border-yellow-500/60 group-hover:shadow-yellow-500/50">
-              <div className="relative h- md:h-[400px] bg-gradient-to-br from-yellow-600/10 to-black">
+              <div className="relative h-[200px] md:h-[400px] bg-gradient-to-br from-yellow-600/10 to-black">
                 
                 {/* Replace with actual image */}
                 <Image
@@ -427,6 +447,7 @@ Program Unggulan
       {/* Footer */}
      
     </main>
+    
 
 
   )

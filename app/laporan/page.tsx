@@ -93,7 +93,7 @@ export default function LaporanPage() {
       {/* BACKGROUND */}
       <div className="absolute inset-0">
         <Image
-          src="/assets/5.jpeg"
+          src="/assets/laporankerja.jpeg"
           alt="Background"
           fill
           priority

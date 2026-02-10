@@ -19,7 +19,7 @@ export default async function ProgramKerjaPage() {
    {/* BACKGROUND */}
    <div className="absolute inset-0">
      <Image
-       src="/assets/5.jpeg"
+       src="/assets/programkerja.jpeg"
        alt="Background"
        fill
        priority
