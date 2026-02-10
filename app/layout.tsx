@@ -50,7 +50,7 @@ export default function RootLayout({
     {/* Logo Poltekpin */}
     <div className="w-20 h-20 sm:w-24 sm:h-24  rounded-full p-2 flex items-center justify-center">
       <Image
-        src="/Poltekpin.PNG"
+        src="/Poltekpin.png"
         alt="Logo Poltekpin"
         width={80}
         height={80}
