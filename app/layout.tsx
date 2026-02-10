@@ -1,10 +1,15 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '../components/Navbar';
 import Image from 'next/image'
 
-const inter = Inter({ subsets: ['latin'] });
+import { Hanken_Grotesk } from "next/font/google";
+
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: 'Website Organisasi',
@@ -17,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
-      <body className={inter.className}>
+ <html lang="en" className={hankenGrotesk.variable}>
+      <body className={`${hankenGrotesk.className} antialiased`}>
         <Navbar />
         <main className="min-h-screen">
           {children}
@@ -52,8 +57,8 @@ export default function RootLayout({
       <Image
         src="/Poltekpin.png"
         alt="Logo Poltekpin"
-        width={80}
-        height={80}
+        width={60}
+        height={60}
         className="object-contain"
       />
     </div>
