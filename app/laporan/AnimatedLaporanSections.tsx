@@ -111,7 +111,7 @@ export function AnimatedLaporanHeader() {
               leading-tight
               mb-6
             ">
-              <span className="text-white drop-shadow-lg">Laporan</span>{" "}
+              <span className="text-white drop-shadow-lg">Laporan Pertanggungjawaban</span>{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
                 Demustar
               </span>
