@@ -105,8 +105,8 @@ export function AnimatedLaporanHeader() {
 
             {/* TITLE */}
             <h1 className="
-              text-center
-              text-4xl md:text-6xl
+              text-center text-3xl
+              md:text-4xl md:text-6xl
               font-extrabold
               leading-tight
               mb-6

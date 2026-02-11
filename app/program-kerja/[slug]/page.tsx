@@ -24,17 +24,17 @@ export default async function ProgramDetailPage({
   }
 
   return (
-    <section className="min-h-screen bg-black text-white pt-28 px-6">
+    <section className="min-h-screen bg-black text-white py-12 md:py-28 px-6">
       <div className="max-w-5xl mx-auto space-y-12">
 
         {/* ================= JUDUL ================= */}
-        <h1 className="text-4xl font-bold text-yellow-400">
+        <h1 className="text-2xl md:text-4xl font-bold text-yellow-400">
           {program.nama_program}
         </h1>
 
         {/* ================= COVER IMAGE ================= */}
         {program.image_url && (
-          <div className="relative w-full h-[420px] rounded-2xl overflow-hidden border border-yellow-600/30">
+          <div className="relative w-full h-[240px] md:h-[420px] rounded-2xl overflow-hidden border border-yellow-600/30">
             <Image
               src={program.image_url}
               alt={program.nama_program}
@@ -48,10 +48,10 @@ export default async function ProgramDetailPage({
         {/* ================= DESKRIPSI ================= */}
         {program.deskripsi_program && (
           <div className="space-y-3">
-            <h2 className="text-xl font-semibold text-yellow-300">
+            <h2 className="text-xl  font-semibold text-yellow-300">
               Deskripsi Program
             </h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-sm md:text-lg text-gray-300 leading-relaxed">
               {program.deskripsi_program}
             </p>
           </div>
@@ -65,7 +65,7 @@ export default async function ProgramDetailPage({
             </h2>
 
             {/* kalau tujuan berupa TEXT */}
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-sm md:text-lg text-gray-300 leading-relaxed">
               {program.tujuan_program}
             </p>
 
