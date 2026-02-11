@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Users, Target, BookOpen, Shield, Award, ChevronDown, ChevronUp, Star, FileText, Activity } from 'lucide-react';
 import Image from "next/image";
-
+import { AnimatedProfilHeader, AnimatedContentSection } from './AnimatedProfilSections';
 
 export default function ProfilPage() {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
@@ -386,110 +386,10 @@ export default function ProfilPage() {
 
   return (
     <div className="min-h-screen bg-black text-white ">
-      {/* Hero Section */}
+ 
+      {/* Hero */}
+      <AnimatedProfilHeader />
 
-      <section className="relative overflow-hidden py-10 md:py-24 border-b border-yellow-500/20">
-      
-        {/* BACKGROUND */}
-        <div className="absolute inset-0">
-          <Image
-            src="/assets/2.jpeg"
-            alt="Background"
-            fill
-            priority
-            className="object-cover"
-          />
-      
-          {/* Blur overlay untuk effect glassmorphism */}
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
-      
-          {/* Gradient overlay lebih subtle */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60" />
-        </div>
-      
-        {/* CONTENT */}
-        <div className="relative z-10 container mx-auto px-6">
-      
-          <div className="max-w-4xl mx-auto">
-      
-            {/* MAIN PANEL - Lebih Transparan seperti referensi */}
-            <div className="
-              relative
-              bg-black/30
-              backdrop-blur-md
-              border border-white/20
-              rounded-3xl
-              px-8 md:px-10 
-              py-12 md:py-14
-              shadow-2xl shadow-black/50
-            ">
-      
-              {/* Glow effect di belakang panel */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-600/0 via-yellow-500/10 to-yellow-600/0 rounded-3xl blur-xl -z-10"></div>
-      
-              {/* BADGE */}
-              <div className="text-center mb-6">
-                <span className="
-                  inline-block
-                  px-5 py-2
-                  bg-yellow-500/20
-                  border border-yellow-400/50
-                  text-yellow-400
-                  rounded-full
-                  text-sm font-semibold
-                  tracking-wide
-                  backdrop-blur-sm
-                ">
-                  PROFIL ORGANISASI
-                </span>
-              </div>
-      
-              {/* TITLE */}
-              <h1 className="
-                text-center
-                text-4xl md:text-6xl
-                font-extrabold
-                leading-tight
-                mb-6
-              ">
-                <span className="text-white drop-shadow-lg">Profil</span>{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
-                  Demustar
-                </span>
-              </h1>
-      
-              {/* DIVIDER */}
-              <div className="flex items-center justify-center gap-3 mt-8">
-                <div className="h-px w-20 bg-gradient-to-r from-transparent to-yellow-500"></div>
-                <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
-                <div className="h-px w-20 bg-gradient-to-l from-transparent to-yellow-500"></div>
-              </div>
-      
-              {/* TAGLINE */}
-              <div className="mt-8 text-center">
-                <span className="
-                  inline-flex items-center gap-2
-                  px-6 py-3
-                  bg-yellow-500/15
-                  border border-yellow-400/40
-                  rounded-full
-                  text-yellow-400
-                  font-semibold
-                  text-sm
-                  backdrop-blur-sm
-                ">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                  </svg>
-                  Aspiratif • Kolaboratif • Solutif
-                </span>
-              </div>
-      
-            </div>
-      
-          </div>
-        </div>
-      </section>
 
 
       {/* Sejarah Section */}
@@ -539,6 +439,7 @@ export default function ProfilPage() {
       </section>
 
       {/* Makna Logo Section */}
+      
       <section className="py-20 bg-gradient-to-b from-gray-900 via-gray-950 to-black relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500 rounded-full blur-3xl"></div>
