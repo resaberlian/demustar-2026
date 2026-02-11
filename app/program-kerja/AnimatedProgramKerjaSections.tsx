@@ -238,9 +238,10 @@ export function AnimatedProgramKerjaCards({ programs }: { programs: ProgramKerja
                 {p.nama_program}
               </h2>
 
-              <p className="text-gray-300 text-sm line-clamp-3">
-                {p.deskripsi_program}
-              </p>
+           <div 
+  className="text-gray-300 text-sm line-clamp-3"
+  dangerouslySetInnerHTML={{ __html: p.deskripsi_program }}
+/>
 
               <div className="flex justify-between items-center pt-2">
                 <span className="text-xs text-gray-400">

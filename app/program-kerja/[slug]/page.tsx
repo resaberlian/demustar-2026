@@ -45,41 +45,23 @@ export default async function ProgramDetailPage({
           </div>
         )}
 
-        {/* ================= DESKRIPSI ================= */}
-        {program.deskripsi_program && (
-          <div className="space-y-3">
-            <h2 className="text-xl  font-semibold text-yellow-300">
-              Deskripsi Program
-            </h2>
-            <p className="text-sm md:text-lg text-gray-300 leading-relaxed">
-              {program.deskripsi_program}
-            </p>
-          </div>
-        )}
+ {/* Render Deskripsi Rich Text */}
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold mb-3 text-yellow-500">Deskripsi Program</h2>
+        <div
+          className="prose prose-invert max-w-none"
+          dangerouslySetInnerHTML={{ __html: program.deskripsi_program }}
+        />
+      </div>
 
-        {/* ================= TUJUAN ================= */}
-        {program.tujuan_program && (
-          <div className="space-y-3">
-            <h2 className="text-xl font-semibold text-yellow-300">
-              Tujuan Program
-            </h2>
-
-            {/* kalau tujuan berupa TEXT */}
-            <p className="text-sm md:text-lg text-gray-300 leading-relaxed">
-              {program.tujuan_program}
-            </p>
-
-            {/* 
-            kalau ternyata tujuan ARRAY, pakai ini:
-            <ul className="list-disc list-inside text-gray-300 space-y-1">
-              {program.tujuan_program.map((item: string, i: number) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-            */}
-          </div>
-        )}
-
+      {/* Render Tujuan Rich Text */}
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold mb-3 text-yellow-500">Tujuan Program</h2>
+        <div
+          className="prose prose-invert max-w-none"
+          dangerouslySetInnerHTML={{ __html: program.tujuan_program }}
+        />
+      </div>
         {/* ================= PENANGGUNG JAWAB ================= */}
         {program.penanggung_jawab && (
           <div className="text-gray-300">

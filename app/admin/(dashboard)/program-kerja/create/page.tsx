@@ -4,6 +4,7 @@ import { supabase } from "../../../../../src/lib/supabase";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
+import RichTextEditor from "@/components/RichTextEditor";
 
 export default function CreateProgramKerja() {
   const router = useRouter();
@@ -173,24 +174,22 @@ export default function CreateProgramKerja() {
         required
       />
 
-      <textarea
-        placeholder="Deskripsi Program"
-        value={form.deskripsi_program}
-        onChange={(e) => setForm({ ...form, deskripsi_program: e.target.value })}
-        className="w-full p-2 bg-black border border-gray-700 rounded"
-        rows={4}
-        required
-      />
-
-      <textarea
-        placeholder="Tujuan Program"
-        value={form.tujuan_program}
-        onChange={(e) => setForm({ ...form, tujuan_program: e.target.value })}
-        className="w-full p-2 bg-black border border-gray-700 rounded"
-        rows={4}
-        required
-      />
-
+<div className="space-y-2">
+  <label className="block font-semibold text-white">Deskripsi Program</label>
+  <RichTextEditor
+    content={form.deskripsi_program}
+    onChange={(html) => setForm({ ...form, deskripsi_program: html })}
+    placeholder="Tulis deskripsi program..."
+  />
+</div>
+<div className="space-y-2">
+  <label className="block font-semibold text-white">Tujuan Program</label>
+  <RichTextEditor
+    content={form.tujuan_program}
+    onChange={(html) => setForm({ ...form, tujuan_program: html })}
+    placeholder="Tulis tujuan program..."
+  />
+</div>
       <input
         type="text"
         placeholder="Penanggung Jawab"
