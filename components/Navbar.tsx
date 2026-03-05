@@ -85,7 +85,7 @@ export default function Navbar() {
                 <h1 className="text-lg md:text-xl font-bold text-yellow-500">
                   DEMUSTAR
                 </h1>
-                <p className="text-[10px] md:text-xs text-gray-400">POLTEKPIN</p>
+                <p className="text-[10px] md:text-xs text-gray-400">POLTEKIMIPAS</p>
               </div>
             </Link>
 
@@ -170,7 +170,7 @@ export default function Navbar() {
           {/* Mobile Menu Footer */}
           <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-yellow-500/20">
             <p className="text-left text-gray-400 text-xs px-4">
-              © 2026 DEMUSTAR Poltekpin
+              © 2026 DEMUSTAR poltekimipas
             </p>
           </div>
         </div>

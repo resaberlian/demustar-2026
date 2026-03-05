@@ -32,7 +32,7 @@ export function AnimatedHeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/assets/1.jpeg"
-          alt="Background DEMUSTAR Poltekpin"
+          alt="Background DEMUSTAR poltekimipas"
           fill
           priority
           className="object-cover object-center"
@@ -302,7 +302,7 @@ export function AnimatedProfileSection() {
               <div className="relative h-[200px] md:h-[400px] bg-gradient-to-br from-yellow-600/10 to-black">
                 <Image
                   src="/assets/1.jpeg"
-                  alt="DEMUSTAR Poltekpin"
+                  alt="DEMUSTAR poltekimipas"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -342,11 +342,11 @@ export function AnimatedProfileSection() {
             </span>
 
             <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-              Tentang <span className="text-yellow-500">Demustar Poltekpin</span>
+              Tentang <span className="text-yellow-500">Demustar poltekimipas</span>
             </h2>
 
             <p className="text-gray-300 leading-relaxed text-md md:text-lg">
-              <strong className="text-yellow-500">Demustar Poltekpin</strong>
+              <strong className="text-yellow-500">Demustar poltekimipas</strong>
               {' '}merupakan kelanjutan dari 
               <strong> Badan Perwakilan Taruna Poltekip</strong> dan 
               <strong> Demustar Poltekim</strong> yang resmi berdiri pada 

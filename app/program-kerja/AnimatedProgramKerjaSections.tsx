@@ -121,7 +121,7 @@ export function AnimatedProgramKerjaHeader() {
 
             {/* SUBTITLE */}
             <p className="text-center text-gray-200 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Program kerja sebagai wujud pelaksanaan fungsi legislatif dan pengawasan aspirasi Taruna Poltekpin
+              Program kerja sebagai wujud pelaksanaan fungsi legislatif dan pengawasan aspirasi Taruna Poltekimipas
             </p>
 
             {/* DIVIDER */}
