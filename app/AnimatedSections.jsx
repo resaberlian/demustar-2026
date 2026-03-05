@@ -70,12 +70,12 @@ export function AnimatedHeroSection() {
               </h1>
               
               <h2 className="text-xl sm:text-2xl lg:text-3xl text-yellow-400 font-semibold">
-                Politeknik Pengayoman Indonesia
+                   Politeknik Imigrasi dan Pemasyarakatan
               </h2>
 
               <div className="space-y-3 sm:space-y-4 text-gray-200">
                 <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
-                  <strong className="text-yellow-400">Dewan Musyawarah Taruna Poltekpin</strong> adalah wadah aspirasi dan representasi taruna dalam menyuarakan kepentingan bersama.
+                  <strong className="text-yellow-400">Dewan Musyawarah Taruna Poltekimipas</strong> adalah wadah aspirasi dan representasi taruna dalam menyuarakan kepentingan bersama.
                 </p>
                 <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
                   Kami hadir sebagai parlemen yang <span className="text-yellow-400 font-semibold">Aspiratif, Kolaboratif, dan Solutif</span> untuk menciptakan lingkungan kampus yang lebih baik.
@@ -149,7 +149,7 @@ export function AnimatedHeroSection() {
               </div>
               
               <a 
-                href="https://instagram.com/demustar_poltekpin" 
+                href="https://instagram.com/demustar_poltekimipas" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between w-full bg-white/5 hover:bg-white/10 border border-yellow-500/30 hover:border-yellow-500/60 px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl transition-all group"
