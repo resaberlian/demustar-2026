@@ -115,7 +115,7 @@ export default function ProfilPage() {
     "Andrenius Purba":  "anggota/komisi-3/andrenius.jpeg",
     "Carlos Felix Betani Silalahi": "anggota/komisi-3/carlos.jpg",
     "Jihan Farhanah Ramadhani": "anggota/komisi-3/jihan.png",
-    "Ahmad Lungguh Putra": "anggota/komisi-4/lungguh.jpg",
+    "Ahmad Lungguh Putra": "anggota/komisi-4/lungguh.jpeg",
     "Cindy Hertina Putri": "anggota/komisi-4/cindy.jpeg",
     "Kasuma Bima Habibilah": "anggota/komisi-4/kasuma.jpg",
     "Febe Okuli Hia": "anggota/komisi-4/febe.jpeg",
